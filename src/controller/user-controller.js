@@ -1,11 +1,11 @@
 'use strict'
 
-const repository = require('../repository/user-repository');
+const Repository = require('../repository/user-repository');
 
 exports.getAllUsers= async(req, res, next) => {
     console.log('Entrou Get')
     try {
-        let dbReturn = await repository.getAll();
+        let dbReturn = await Repository.getAll();
         res.status(200).send(dbReturn);
     } catch (e) {
         res.status(500).send({
