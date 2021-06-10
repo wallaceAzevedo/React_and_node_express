@@ -1,4 +1,4 @@
-'use strict'
+/*'use strict'
 
 const repository = require('../repository/product-repository');
 
@@ -54,3 +54,4 @@ exports.deleteProduct = async(req, res, next) => {
         );
     }
 };
+*/

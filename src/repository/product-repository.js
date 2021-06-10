@@ -1,4 +1,4 @@
-'use strict'
+/*'use strict'
 
 const mongoose = require('mongoose');
 require('../models/product');
@@ -38,3 +38,4 @@ exports.deleteLogic = async(id, data) => {
         }
     });
 }
+*/
