@@ -10,13 +10,12 @@ exports.getAll = async() => {
 ;}
 
 exports.create = async(data) => {
-    let product = new Product(data);     
+    let product = new Product(data);
     return await product.save();
 }
 
 exports.update = async(id, data) => {
     console.log(data);
-    
     return await Product.findByIdAndUpdate(id, {
         $set: {
             name: data.name,
@@ -27,16 +26,14 @@ exports.update = async(id, data) => {
     });
 }
 
-exports.delete = async(id, data) => {       
-    return await Product.findOneAndDelete(_id,id);
+exports.delete = async(id, data) => {
+    return await Product.findOneAndDelete({_id: id});
 }
 
 exports.deleteLogic = async(id, data) => {
     console.log(data);
-    
     return await Product.findByIdAndUpdate(id, {
         $set: {
-           
             status: false
         }
     });
