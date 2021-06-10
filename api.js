@@ -10,7 +10,7 @@ mongoose.connect('mongodb://localhost:27017/cursoreact',{
 const UserModel  = require('./src/models/user');
 var USERS = [
     { 'id': 1, 'username': 'brunohauck', 'password': '123456' },
-    { 'id': 2, 'username': 'wallace' , 'password': '123456' },
+    { 'id': 2, 'username': 'paul' , 'password': '123456' },
 ];
 
 var HELLO = [

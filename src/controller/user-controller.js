@@ -2,7 +2,7 @@
 
 const repository = require('../repository/user-repository');
 
-exports.getAllUsers = async(req, res, next) => {
+exports.get = async(req, res, next) => {
     try {
         let dbReturn = await repository.getAll();
         res.status(200).send(dbReturn);        
