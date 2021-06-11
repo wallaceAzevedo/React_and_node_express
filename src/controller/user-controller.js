@@ -72,6 +72,7 @@ exports.deleteUser = async(req, res, next) => {
 };
 exports.login = async(req, res, next) => {
     try {
+        
         console.log(req.body.password);
         const user = await repository.autenticate({
             email: req.body.email,
