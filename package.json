@@ -6,7 +6,6 @@
   "dependencies": {
     "@types/express": "^4.17.12",
     "express": "^4.17.1",
-    "mongoose": "^5.12.13",
     "package.json": "^2.0.1",
     "scripts": {
       "dev": "nodemon api.js"

@@ -11,13 +11,6 @@ const UserModel = new Schema({
     creationDate: {type:Date, default:Date.now },
 }, { versionKey:false });
 
-/*
-UserModel.pre('save', next =>{
-    let now = new Date();
-    if(!this.creationDate){
-        this.creationDate = now;
-    }
-    next();
-});*/
+
 
 module.exports = mongoose.model('User', UserModel);

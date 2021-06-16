@@ -2,7 +2,7 @@
 
 const repository = require('../repository/user-repository');
 
-exports.getallUser = async(req, res, next) => {
+exports.getallUsers = async(req, res, next) => {
     try {
         let dbReturn = await repository.getAll();
         res.status(200).send(dbReturn);        
@@ -27,3 +27,4 @@ exports.addUser = async(req, res, next) => {
         );
     }
 };
+

@@ -3,16 +3,23 @@ const app = express();
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
-// Ligar á B.D.: 'test'->user da BD, ´nnn´->pass
-mongoose.connect(‘mongodb+srv://test:nnn@nodejscluster-art2k.mongodb.net/test?retryWrites=true’);
-// Confirma ligação na consola
-mongoose.connection.on(‘connected’, function () {
-  console.log(‘Connected to Database ‘+’test’);
+
+mongoose.connect('mongodb+srv://teste:nnn@nodejscluster-art2k.mongodb.net/test?retryWrites=true');
+
+
+mongoose.connection.on('connected', function () {
+  console.log('Connected to Database' +'teste');
 });
-// Mensagem de Erro
-mongoose.connection.on(‘error’, (err) => {
-  console.log(‘Database error ‘+err);
+
+
+mongoose.connection.on('error', (err) => {
+  console.log('Database error' +err);
 });
+
+var USERS = [
+    {'id':1, 'username': 'brunohauck', 'password': '123456'},
+    {'id':2, 'username': 'wallace', 'password': '123456'},
+]
 
 var HELLO = [
     { 'msg': 'Hello Express' }
