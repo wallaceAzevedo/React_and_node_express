@@ -5,9 +5,16 @@ const mongoose = require('mongoose');
 const expressJwt = require('express-jwt');
 const cors = require('cors');
 
-mongoose.connect('mongodb://localhost:27017/cursoreact',{
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
+mongoose.connect('mongodb+srv://teste:nnn@nodejscluster-art2k.mongodb.net/test?retryWrites=true');
+
+
+mongoose.connection.on('connected', function () {
+  console.log('Connected to Database' +'teste');
+});
+
+
+mongoose.connection.on('error', (err) => {
+  console.log('Database error' +err);
 });
 
 app.use(bodyParser.json());
