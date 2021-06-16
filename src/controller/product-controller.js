@@ -40,11 +40,12 @@ exports.editProduct = async(req, res, next) => {
         );
     }
 };
+
 exports.deleteProduct = async(req, res, next) => {
     try {
         await repository.delete(req.params.id);
         res.status(200).send({
-            message: 'Product deleted!'
+            message: 'Product delete!'
         });        
     } catch (e) {
         res.status(500).send(

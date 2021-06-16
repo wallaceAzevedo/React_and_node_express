@@ -5,21 +5,15 @@ const mongoose = require('mongoose');
 const expressJwt = require('express-jwt');
 const cors = require('cors');
 
-mongoose.connect('mongodb+srv://teste:nnn@nodejscluster-art2k.mongodb.net/test?retryWrites=true');
-
-
-mongoose.connection.on('connected', function () {
-  console.log('Connected to Database' +'teste');
-});
-
-
-mongoose.connection.on('error', (err) => {
-  console.log('Database error' +err);
+mongoose.connect('mongodb://localhost:27017/cursoreact',{
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
 });
 
 app.use(bodyParser.json());
 app.use(cors());
-app.use(expressJwt({secret: 'FDSFDSFDSFDSFDS'}).unless({path: ['/auth', '/auth/login', '/product']}));
+app.use(expressJwt({secret: 'd41d8cd98f00b204e9800998ecf8427e|7aef61337bcee2'}).unless({path: ['/auth', '/auth/login', '/user']}));
+
 
 app.get('/', function(req, res){
     res.send(getHello());
